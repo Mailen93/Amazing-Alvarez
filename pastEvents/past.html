@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Amazing Events</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <img class="logo" src="../assets/LogoAmazingEvents.png" alt="logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="../home/index.html">Home</a>
+                        <a class="nav-link" href="../upcomingEvents/upcoming.html">Upcoming Events</a>
+                        <a class="nav-link" href="#">Past Events</a>
+                        <a class="nav-link" href="../contact/contact.html">Contact</a>
+                        <a class="nav-link" href="../stats/stats.html">Stats</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Past Events</h1>
+        <div class="searchbar">
+
+            <div id="checks" class="inputs_container">
+                <label class="categories">
+                    <input class=".form-check-input" type="checkbox" value="Food Fair"/>
+                    <p>Food Fair</p>
+                  </label>
+                  <label class="categories">
+                    <input class=".form-check-input" type="checkbox" value="Music Concert"/>
+                    <p>Music Concert</p>
+                  </label>
+                  <label class="categories">
+                    <input class=".form-check-input" type="checkbox" value="Costume Party"/>
+                    <p>Costume Party</p>
+                  </label>
+                  <label class="categories">
+                    <input class=".form-check-input" type="checkbox" value="Museum"/>
+                    <p>Museum</p>
+                  </label>
+                  <label class="categories">
+                    <input class=".form-check-input" type="checkbox" value="Cinema"/>
+                    <p>Cinema</p>
+                  </label>
+                  <label class="categories">
+                    <input class=".form-check-input" type="checkbox" value="Race"/>
+                    <p>Race</p>
+                  </label>
+                  <label class="categories">
+                    <input class=".form-check-input" type="checkbox" value="Book Exchange"/>
+                    <p>Book Exchange</p>
+                  </label>
+            </div>
+
+            <form class="d-flex">
+                <input id="input_search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark" type="submit">Search</button>
+            </form>
+
+        </div>
+
+        <div id="past_events" class="row m-0">
+          
+        </div>
+           
+
+    </main>
+    <footer>
+        <div class="icon_container">
+            <img src="../assets/instagram.png" alt="ig">
+            <img src="../assets/facebook.png" alt="fb">
+            <img src="../assets/whatsapp.png" alt="wh">
+        </div>
+        <p>Cohort 41</p>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="../datos.js"></script>
+       <script src="./past.js"></script>
+
+</body>
+
+</html>
+
