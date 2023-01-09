@@ -11,7 +11,10 @@ let contenedor = document.querySelector(".bigcard")
 let eventos = data.events;
 
 function renderCard(contenedor,data,id){
+    console.log(data)
     let evento = data.find(e => e._id === id)
+    console.log(evento)
+    console.log(id)
     contenedor.innerHTML = ""
     contenedor.innerHTML = `<div class="card mb-3" style="max-width: 100%;">
     <div class="row g-0">

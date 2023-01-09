@@ -6,22 +6,12 @@ function eventsInfo (data){
     }
     return arrPastEvents
 }
-
-// function eventsInfo (data){ 
-//     let arrPastEvents = []
-//     data.events.map((event) => {
-//         if (event.date < data.currentDate) {
-//             arrPastEvents.push(event);
-//         }
-//     })
-//     return arrPastEvents
-// }
-
-
 let eventos = eventsInfo(data);
+let categories = createCategories(eventos);
 
 // COMPONENTE CHECKBOX-CONTAINER //
 let checkboxContainer = document.getElementById("checks");
+checkboxContainer.innerHTML= checksCreator(categories);
 
 // CONTENEDOR DE CARDS //
 let cardsContainer = document.getElementById("past_events");
@@ -43,7 +33,7 @@ cardsContainer.innerHTML = initialState;
 function templateCreator(eventos) {
   let template = "";
   if (!eventos.length) {
-    template += "<h2>UNEXISTENT EVENT, PLEASE CHANGE YOUR SEARCH<h2>";
+    template += "<h3>UNEXISTENT EVENT, PLEASE CHANGE YOUR SEARCH<h3>";
   }
   eventos.map((evento) => {
     template += `<div class="col">
@@ -61,10 +51,28 @@ function templateCreator(eventos) {
   return template;
 }
 
+function createCategories(eventos) {
+  let categories = eventos.map((event) => event.category);
+  let set = new Set(categories)
+  categories = Array.from(set)
+  return categories
+}
+
+function checksCreator(categories) {
+  let template = ""
+  categories.forEach((category) => {
+    template += `<label class="categories">
+    <input class=".form-check-input" type="checkbox" value="${category}"/>
+    <p>${category}</p>
+  </label>`
+})
+return template
+}
+
 // FUNCIONES DE FILTRADO Y BÚSQUEDA:
 
 // FUNCIÓN FILTRADO DE SEARCHBAR:
-const searchEvents = (search, eventos) => {
+function searchEvents(search, eventos) {
   let filtered = eventos.filter((evento) => {
     return evento.name.toLowerCase().includes(search.value.toLowerCase());
   });
@@ -72,7 +80,7 @@ const searchEvents = (search, eventos) => {
 };
 
 //FUNCIÓN FILTRADO DE CHECKBOX:
-const checkFilter = (checks, eventos) => {
+function checkFilter(checks, eventos) {
   let checkedList = [];
   checks.forEach(check => {
     if(check.checked) {
@@ -91,7 +99,7 @@ const checkFilter = (checks, eventos) => {
 };
 
 //FUNCIÓN CRUZADA DE FILTROS: // 
-const filterCrossed = () => {
+function filterCrossed() {
     let filterByCheck = checkFilter(checksList, eventos)
     let filterBySearch = searchEvents(search, filterByCheck)
 
