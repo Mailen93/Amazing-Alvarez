@@ -81,7 +81,7 @@ function searchEvents (search, eventos) {
   return filtered;
 };
 
-//FUNCIÓN FILTRADO DE CHECKBOX:
+//FUNCIÓN FILTRADO DE CHECKBOX:::
 function checkFilter (checks, eventos) {
   let checkedList = [];
   checks.forEach(check => {
